@@ -1,4 +1,7 @@
 package com.bridgelabz;
+
+
+import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -102,6 +105,18 @@ public class HashTable {
         }
     }
 
+    public void remWord(String str) {
+        Map<String, Integer> map = new TreeMap<>();
+
+        Iterator <String> word = map.keySet().iterator();
+        while (word.hasNext()){
+            if (word.next().equals(str)){
+                word.remove();
+            }
+        }
+    }
+
+
 
     public static void main(String[] args) {
 
@@ -130,6 +145,11 @@ public class HashTable {
         String paraString = "paranoids are not paranoids because they are paranoid but they keep putting themselves deliberately into paranoid avoidable situation";
         System.out.println("Given Para String : " + paraString);
         hashTable.freqOfWords(paraString);
+
+        hashTable.remWord("they");
+
+
+
     }
 
 }
